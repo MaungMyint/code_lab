@@ -36,10 +36,10 @@
                                 <td>{{ auth()->user()->name }}</td>
                                 <td>{{ $category->created_at->diffForHumans() }}</td>
                                 <td>
-                                    <a href="{{ route('edit', $category->slug) }}" class="btn btn-info">
+                                    <a href="{{ route('category.edit', $category->slug) }}" class="btn btn-info">
                                         <i class="icon-pencil">Edit</i>
                                     </a>
-                                    <a href="{{ route('delete', $category->slug) }}" id="categotydelte" class="btn btn-danger">
+                                    <a href="{{ route('category.delete', $category->slug) }}" id="categotydelte" class="btn btn-danger">
                                         <i class="icon-trash">Delete</i>
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">

@@ -38,14 +38,10 @@
                                 <td>{{ $category->created_at->diffForHumans() }}</td>
                                 <td>
                                     <a href="{{ route('category.edit', $category->slug) }}" class="btn btn-info">
-                                        <i class="icon-pencil">Edit</i>
+                                        <i class="icon-pencil"></i>Edit
                                     </a>
-                                    <a href="{{ route('delete', $category->slug) }}" class="btn btn-danger button" data-id="{{$category->id}}">Delete</a>
-                                    {{-- <a href="{{ route('category.delete', $category->slug) }}"id="categotydelte" class="btn btn-danger">
-                                        <i class="icon-trash">Delete</i>
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    </a> --}}
+                                    <a href="{{ route('category.delete', $category->slug) }}" class="btn btn-danger button" data-id="{{$category->id}}">Delete</a>
+
                                 </td>
                             </tr>
                             @endforeach
@@ -57,27 +53,4 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).on('click', '.button', function (e) {
-    e.preventDefault();
-    var id = $(this).data('id');
-    console.log(id);
-    swal({
-            title: "Are you sure!",
-            type: "sure",
-            confirmButtonClass: "btn-danger",
-            confirmButtonText: "Yes!",
-            showCancelButton: true,
-        },
-        function() {
-            $.ajax({
-                type: "POST",
-                url: "{{url('/category/destroy')}}",
-                data: {id:id},
-                success: function (data) {
-                              //
-                    }
-            });
-    });
-});
 @endsection

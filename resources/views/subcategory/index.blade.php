@@ -54,24 +54,4 @@
     </div>
 </div>
 <script>
-    $(document).ready(function () {
-        $('#categotydelte').click(function (e) {
-            e.preventDefault();
-            var url = $(this).attr('href');
-            swal({
-                title: "Are you sure?",
-                text: "Once deleted, you will not be able to recover this imaginary file!",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        window.location.href = url;
-                    } else {
-                        swal("Your imaginary file is safe!");
-                    }
-                });
-        });
-    });
-@endsection
+ @endsection
