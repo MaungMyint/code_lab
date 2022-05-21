@@ -8,7 +8,7 @@
                 <div class="col-lg-12 col-md-12">
                         <form id="tipForm" action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                                <h6>Product Category Form</h6>
+                                <h6>Product Crate Form</h6>
                                 <hr>
                                 <div class="form-group row"style="margin-bottom: 20px">
                                     <label class="col-lg-3 col-form-label form-control-label">Image</label>

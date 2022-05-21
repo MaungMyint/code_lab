@@ -10,7 +10,7 @@
 
                         <form id="tipForm" action="{{ route('product.update',$product->slug) }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                                <h6>Product Category Form</h6>
+                                <h6>Updated Product  Form</h6>
                                 <hr>
                                 <div class="form-group row"style="margin-bottom: 20px">
                                     <label class="col-lg-3 col-form-label form-control-label">Image</label>

@@ -35,7 +35,7 @@ class HomeController extends Controller
 
     public function detail($slug){
         $product=Product::where('is_active',1)->where('slug',$slug)->first();
-        $comments = Comment::orderBy('created_at', 'desc')->get();
+        $comments = Comment::where('product_id',$product->id)->orderBy('created_at', 'desc')->get();
         if($product){
             return view('home_detail', compact('product','comments'));
         }

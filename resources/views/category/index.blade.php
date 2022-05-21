@@ -8,12 +8,12 @@
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12">
             <div class="card planned_task">
-                <div class="header">
-                    <ul class="header-dropdown">
+                <div class="header mb-2">
+                    <div  class="header-dropdown">
                             <a href="{{ route('category.create')}}"
                                 class="btn btn-info mr-2 d-flex justify-content-center align-items-center">
-                                <i class="icon-plus mr-2 text-white"></i> Create Main Category</a>
-                    </ul>
+                                <i class="icon-plus mr-2 text-white"></i> Create New Main Category</a>
+                    </div>
                 </div>
 
                 <h2>Main Category List</h2>
@@ -40,11 +40,12 @@
                                     <a href="{{ route('category.edit', $category->slug) }}" class="btn btn-info">
                                         <i class="icon-pencil">Edit</i>
                                     </a>
-                                    <a href="{{ route('category.delete', $category->slug) }}"id="categotydelte" class="btn btn-danger">
+                                    <a href="{{ route('delete', $category->slug) }}" class="btn btn-danger button" data-id="{{$category->id}}">Delete</a>
+                                    {{-- <a href="{{ route('category.delete', $category->slug) }}"id="categotydelte" class="btn btn-danger">
                                         <i class="icon-trash">Delete</i>
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    </a>
+                                    </a> --}}
                                 </td>
                             </tr>
                             @endforeach
@@ -57,24 +58,26 @@
     </div>
 </div>
 <script>
-    $(document).ready(function () {
-        $('#categotydelte').click(function (e) {
-            e.preventDefault();
-            var url = $(this).attr('href');
-            swal({
-                title: "Are you sure?",
-                text: "Once deleted, you will not be able to recover this imaginary file!",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        window.location.href = url;
-                    } else {
-                        swal("Your imaginary file is safe!");
+    $(document).on('click', '.button', function (e) {
+    e.preventDefault();
+    var id = $(this).data('id');
+    console.log(id);
+    swal({
+            title: "Are you sure!",
+            type: "sure",
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Yes!",
+            showCancelButton: true,
+        },
+        function() {
+            $.ajax({
+                type: "POST",
+                url: "{{url('/category/destroy')}}",
+                data: {id:id},
+                success: function (data) {
+                              //
                     }
-                });
-        });
+            });
     });
+});
 @endsection

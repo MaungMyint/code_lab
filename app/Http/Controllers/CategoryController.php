@@ -84,7 +84,7 @@ class CategoryController extends Controller
     {
 
         $category = category::where('slug',$slug)->first();
-        $category->delete();
+        //$category->delete();
         return redirect()->route('category');
     }
 }

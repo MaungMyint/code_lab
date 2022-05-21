@@ -3,10 +3,10 @@
     <div class="max-w-screen-xl mx-auto sm:px-6 lg:px-8">
         <div class="text-center m-3">
             <h2 class="text-3xl header leading-9 font-extrabold  sm:text-4xl sm:leading-10">
-                Welcome to the Laravel E-commerce Store
+                Welcome to the Electronics  E-commerce Store
             </h2>
             <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quisquam.
+                E-commerce (electronic commerce) is the buying and selling of goods and services, or the knowing of new devices.
             </p>
         </div>
         <div class="row clearfix m-4">
@@ -71,9 +71,11 @@
                             </div>
                         @endforeach
                     @else
-                        <div class="d-flex justify-content-center">
-                            <h3>There is no Data</h3>
+                    <div class="row " id="empty-list">
+                        <img src="{{ asset('images/empty.svg') }}" alt="empty" height="300" width="100%" />
                         </div>
+                        <div class="row " id="empty-list">
+                            <h3 class="text-center">No Products Found</h3>
                     @endif
                 </div>
             </div>

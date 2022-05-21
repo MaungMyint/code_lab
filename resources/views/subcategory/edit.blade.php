@@ -11,7 +11,7 @@
                         <form method="post" action="{{ route('subcategory.update', $subcategory->slug ) }}">
                             @csrf
                             @method('POST')
-                                    <h6>Create Main Category Form</h6>
+                                    <h6>Update Sub Category Form</h6>
                                     <hr>
                                         <div class="form-group row " style="margin-bottom: 20px">
                                             <label class="col-lg-3 col-form-label form-control-label">Main Category</label>

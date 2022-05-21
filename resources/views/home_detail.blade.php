@@ -3,10 +3,10 @@
 <div class="max-w-screen-xl mx-auto sm:px-6 lg:px-10">
     <div class="text-center m-3">
         <h2 class="text-3xl header leading-9 font-extrabold  sm:text-4xl sm:leading-10">
-            Detail to the Laravel E-commerce Store
+            Detail of the Electronics  of {{ $product->name }}
         </h2>
         <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quisquam.
+            E-commerce (electronic commerce) is the buying and selling of goods and services, or the knowing of new devices.
         </p>
     </div>
 </div>
@@ -30,7 +30,7 @@
                 <div class="text-center m-3">
                     <h5 class="font-medium text-gray-700">Product Price:</h5>
                     <p class="mt-3 max-w-md  text-base text-gray-500 sm:text-lg">
-                        {{ $product->price }}</p>
+                        {{ $product->price }} /mmk</p>
                 </div>
             </div>
 

@@ -7,15 +7,15 @@
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12">
             <div class="card planned_task">
-                <div class="header">
-                    <ul class="header-dropdown">
+                <div class="header mb-2">
+                    <div class="header-dropdown">
                             <a href="{{ route('product.create')}}"
                                 class="btn btn-info mr-2 d-flex justify-content-center align-items-center">
-                                <i class="icon-plus mr-2 text-white"></i> Create Tip</a>
-                    </ul>
+                                <i class="icon-plus mr-2 text-white"></i> Create New Product</a>
+                    </div>
                 </div>
 
-                <h2>Main Category List</h2>
+                <h3>Products List</h3>
                 <div class="body">
                     <table class="table table-bordered table-striped table-hover dataTable table-responsive accordion-header">
                         <thead>

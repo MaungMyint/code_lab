@@ -10,7 +10,7 @@
 
                             <form id="tipForm" action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                    <h6>Create Main Category Form</h6>
+                                    <h6>Update Main Category Form</h6>
                                     <hr>
                                     <div class="row ">
                                         <div class="col-lg-12 col-md-12">
@@ -18,7 +18,6 @@
                                                 <label for="name">Name</label>
                                                 <input type="text" class="form-control" name="name" placeholder="Enter Name"
                                                     value="{{ $category->name }}">
-                                                    //delete confirmation
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
