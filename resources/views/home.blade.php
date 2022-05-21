@@ -48,7 +48,7 @@
                                         <div class="mt-3 d-flex align-items-center">
                                             <i class="fa fa-clock-o mr-4 fa-2x"></i>
                                             <h6 class="mb-0">Sub Category: <br><span class="text-muted">
-                                                    {{ $subcategories->find($product->category_id)->name }}
+                                                    {{ $subcategory->find($product->subcategory_id)->name; }}
                                                 </span>
                                             </h6>
                                         </div>
